@@ -38,3 +38,15 @@
   display: flex;
   gap: 20px;
 }
+.logout {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--btn);
+  border: none;
+  border-radius: 5px;
+  color: var(--textColor);
+  font-weight: bold;
+}
+.logout:hover {
+  background: #0e47cd;
+}

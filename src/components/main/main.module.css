@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  max-height: max-content;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: self-start;
+}
+.box {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+.title {
+  font-size: xx-large;
+  color: var(--text);
+  font-weight: bold;
+}
+.button {
+  width: 200px;
+  height: 50px;
+  background: var(--btn);
+  color: var(--text);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background: #0e47cd;
+}

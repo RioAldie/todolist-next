@@ -1,10 +1,12 @@
-import React from 'react';
 import styles from './navbar.module.css';
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>Todolist</div>
+      <Link href={'/'}>
+        <div className={styles.title}>Todolist</div>
+      </Link>
     </div>
   );
 };
