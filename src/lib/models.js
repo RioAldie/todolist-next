@@ -2,21 +2,14 @@ import mongoose from 'mongoose';
 
 const taskSchema = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       maxlengh: 125,
       required: true,
     },
-    category: {
+    body: {
       type: String,
-      maxlengh: 25,
-    },
-    image: {
-      type: String,
-      maxlengh: 25,
-    },
-    desc: {
-      type: String,
+      maxlengh,
     },
   },
   { timestamps: true }
