@@ -2,18 +2,20 @@ import LogoutButton from '@/components/login/logoutButton';
 import styles from '@/components/main/main.module.css';
 import TaskCard from '@/components/task/taskCard';
 import { getTasks } from '@/lib/data';
+import Link from 'next/link';
 
 const Main = async () => {
   const data = await getTasks();
 
-  console.log('task', data);
   return (
     <main className={styles.main}>
       <div className={styles.box}>
         <p className={styles.title}>
           Todolist<span style={{ color: 'red' }}>.</span>{' '}
         </p>
-        <button className={styles.button}>Add New Task</button>
+        <Link href={'/main/add'}>
+          <button className={styles.button}>Add New Task</button>
+        </Link>
       </div>
 
       <div className={styles.container}>

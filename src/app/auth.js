@@ -14,7 +14,8 @@ const login = async (credentials) => {
     const isPasswordCorrect = user.password === credentials.password;
 
     if (!isPasswordCorrect) throw new Error('Wrong password!');
-
+    console.log(user);
+    //localStorage.setItem('user', JSON.stringify(user));
     return user;
   } catch (err) {
     console.log(err);
