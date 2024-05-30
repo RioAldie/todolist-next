@@ -5,4 +5,43 @@
   align-items: center;
   padding: 6rem;
   color: aliceblue;
+  margin-top: 0;
+}
+.section {
+  width: 500px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container input,
+.container textarea,
+.container select {
+  padding: 20px;
+  background-color: var(--bgSoft);
+  border: none;
+  border-radius: 5px;
+  color: var(--textColor);
+}
+
+.save {
+  padding: 20px;
+  cursor: pointer;
+  background-color: var(--btn);
+  border: none;
+  border-radius: 5px;
+  color: var(--textColor);
+  font-weight: bold;
+}
+.save:hover {
+  background: #0e47cd;
+}
+.select {
+  cursor: pointer;
+}
+.option {
+  height: 60px;
+  color: var(--textColor);
 }
