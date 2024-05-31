@@ -2,6 +2,7 @@ import LogoutButton from '@/components/login/logoutButton';
 import styles from '@/components/main/main.module.css';
 import TaskCard from '@/components/task/taskCard';
 import { getTasks } from '@/lib/data';
+import { revalidatePath } from 'next/cache';
 import Link from 'next/link';
 
 const Main = async () => {

@@ -1,6 +1,7 @@
 'use client';
 import styles from '@/components/add/add.module.css';
 import { editTask } from '@/lib/action';
+import { revalidatePath } from 'next/cache';
 
 import {
   redirect,
@@ -10,6 +11,7 @@ import {
 import { useEffect, useState } from 'react';
 
 import { useFormState } from 'react-dom';
+import { Toaster, toast } from 'sonner';
 
 const EditTask = () => {
   const pathname = usePathname();
@@ -31,12 +33,13 @@ const EditTask = () => {
     setQueryBody(body || '');
 
     if (state) {
-      redirect('/main');
+      toast.success('Success');
     }
   }, [pathname, searchParams, state]);
 
   return (
     <main className={styles.main}>
+      <Toaster richColors />
       <div className={styles.section}>
         <form action={formAction} className={styles.container}>
           <h1>Edit Task</h1>
