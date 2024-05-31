@@ -31,7 +31,7 @@ Open http://localhost:3000 with your browser to see the result.
 this project is deployed with vercel
 
 ```
-    url:
+    url: https://todolist-next-eight.vercel.app/
 ```
 
 ## test
