@@ -32,9 +32,45 @@ export const addNewTask = async (prevState, formData) => {
     await newCousre.save();
 
     revalidatePath('/main');
-    //   revalidatePath('/courses');
+
+    return true;
   } catch (err) {
     console.log(err);
+    return { error: 'Something went wrong!' };
+  }
+};
+
+export const deleteTask = async (formData) => {
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    connectToDb();
+
+    await Task.findByIdAndDelete(id);
+
+    revalidatePath('/main');
+  } catch (err) {
+    console.log(err);
+    return { error: 'Something went wrong!' };
+  }
+};
+export const editTask = async (prevState, formData) => {
+  const { id, title, body } = Object.fromEntries(formData);
+
+  try {
+    connectToDb();
+
+    const updateTask = await Task.findByIdAndUpdate(
+      id,
+      { title: title, body: body },
+      { new: true }
+    );
+
+    if (!updateTask) {
+      return { error: 'Something wrong' };
+    }
+    return true;
+  } catch (error) {
     return { error: 'Something went wrong!' };
   }
 };

@@ -1,7 +1,10 @@
+import { deleteTask } from '@/lib/action';
 import styles from './task.module.css';
+import Link from 'next/link';
 
 const TaskCard = (props) => {
-  const { title, date, body } = props;
+  const { title, date, body, id } = props;
+
   return (
     <div className={styles.card}>
       <div className={styles.box}>
@@ -10,8 +13,19 @@ const TaskCard = (props) => {
       </div>
       <p className={styles.body}> {body}</p>
       <div className={styles.action}>
-        <button className={styles.edit}>Edit</button>
-        <button className={styles.delete}>Delete</button>
+        <Link
+          className={styles.edit}
+          href={{
+            pathname: `/main/${id}`,
+            query: { title: title, body: body },
+          }}>
+          Edit
+        </Link>
+
+        <form action={deleteTask}>
+          <input type="hidden" name="id" value={id} />
+          <button className={styles.delete}>Delete</button>
+        </form>
       </div>
     </div>
   );

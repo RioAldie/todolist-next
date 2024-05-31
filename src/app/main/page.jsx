@@ -26,6 +26,7 @@ const Main = async () => {
               body={task?.body}
               date={task?.date}
               key={i}
+              id={task?._id}
             />
           );
         })}

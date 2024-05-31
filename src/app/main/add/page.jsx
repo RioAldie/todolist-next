@@ -2,11 +2,21 @@
 
 import styles from '@/components/add/add.module.css';
 import { addNewTask } from '@/lib/action';
+import { useEffect } from 'react';
 import { useFormState } from 'react-dom';
+import { Toaster, toast } from 'sonner';
 
 const AddTask = () => {
   const [state, formAction] = useFormState(addNewTask, undefined);
 
+  useEffect(() => {
+    if (state && state !== undefined) {
+      toast.success('success');
+    }
+    if (state?.error) {
+      toast.error('something wrong');
+    }
+  }, [state]);
   return (
     <main className={styles.main}>
       <div className={styles.section}>
@@ -22,6 +32,7 @@ const AddTask = () => {
           <button className={styles.save}>Save</button>
         </form>
       </div>
+      <Toaster richColors />
     </main>
   );
 };
